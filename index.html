@@ -11,7 +11,6 @@
 
 
 <div class="container">
-    <h1 class="mt-5">Certificados DataScience Short-Course</h1>
     <p class="lead">A continuación, ustedes podrán hacer click en su nombre completo y descargar su certificado de participación:</p>
 
     <input class="form-control mb-4" id="myInput" type="text" placeholder="Buscar Nombre..">
@@ -25,14 +24,14 @@
 </div>
 
 <script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myList li").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myList li").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
     });
-  });
-});
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
