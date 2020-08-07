@@ -13529,6 +13529,7 @@ Name: team, dtype: object</pre>
 <span class="c1"># four categories and what was their average fare?</span>
 
 <span class="n">titanic</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;survived&#39;</span><span class="p">,</span><span class="s1">&#39;gender&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()[[</span><span class="s1">&#39;fare&#39;</span><span class="p">]]</span>
+<span class="n">titanic</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;survived&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">])[[</span><span class="s1">&#39;fare&#39;</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -13556,41 +13557,56 @@ Name: team, dtype: object</pre>
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
         text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th></th>
-      <th>fare</th>
+      <th colspan="2" halign="left">fare</th>
     </tr>
     <tr>
-      <th>survived</th>
+      <th></th>
+      <th></th>
+      <th>mean</th>
+      <th>count</th>
+    </tr>
+    <tr>
       <th>gender</th>
+      <th>survived</th>
+      <th></th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th rowspan="2" valign="top">no</th>
-      <th>F</th>
+      <th rowspan="2" valign="top">F</th>
+      <th>no</th>
       <td>23.025556</td>
+      <td>81</td>
     </tr>
     <tr>
-      <th>M</th>
-      <td>21.961923</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">yes</th>
-      <th>F</th>
+      <th>yes</th>
       <td>51.939013</td>
+      <td>233</td>
     </tr>
     <tr>
-      <th>M</th>
+      <th rowspan="2" valign="top">M</th>
+      <th>no</th>
+      <td>21.961923</td>
+      <td>468</td>
+    </tr>
+    <tr>
+      <th>yes</th>
       <td>40.822294</td>
+      <td>109</td>
     </tr>
   </tbody>
 </table>
